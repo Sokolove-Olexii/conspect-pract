@@ -15,7 +15,7 @@ const Card = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 10px;
   font-weight: bold;
 `;
@@ -25,9 +25,23 @@ const Row = styled.div`
   align-items: center;
   margin: 4px 0;
   font-size: 14px;
+
+  svg {
+    margin-right: 8px;
+    color: #444;
+  }
 `;
 
 export const Event = ({ name, time, location, speaker }) => {
+  const startTime = new Date(time.start);
+  const endTime = new Date(time.end);
+
+  const durationMinutes = Math.floor((endTime - startTime) / 1000 / 60);
+  const durationHours =
+    durationMinutes >= 60
+      ? `${Math.round(durationMinutes / 60)} hours`
+      : `${durationMinutes} mins`;
+
   return (
     <Card>
       <Title>{name}</Title>
@@ -43,7 +57,24 @@ export const Event = ({ name, time, location, speaker }) => {
         <BsCalendar2Week />
         {time.start}
       </Row>
-      <Row>{}</Row>
+      <Row>
+        <BsFillClockFill /> {startTime.toLocaleDateString()}{" "}
+        {startTime.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        })}
+      </Row>
     </Card>
   );
+};
+
+// ✅ PropTypes перевірка:
+Event.propTypes = {
+  name: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  speaker: PropTypes.string.isRequired,
+  time: PropTypes.shape({
+    start: PropTypes.string.isRequired,
+    end: PropTypes.string.isRequired,
+  }).isRequired,
 };

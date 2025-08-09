@@ -8,7 +8,7 @@ h1 {
   background-color: #d6ecff;
   border: 2px solid #86b7e5;
   border-radius: 6px;
-  font-size: 22px;
-  color: #333;
+  font-size: 25px;
+  color: #333333;
 }
 `;

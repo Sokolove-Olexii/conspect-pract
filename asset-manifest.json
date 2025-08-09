@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/conspect-pract/static/css/main.e6c13ad2.css",
+    "main.js": "/conspect-pract/static/js/main.8f520c69.js",
+    "static/js/453.6f0c512e.chunk.js": "/conspect-pract/static/js/453.6f0c512e.chunk.js",
+    "index.html": "/conspect-pract/index.html",
+    "main.e6c13ad2.css.map": "/conspect-pract/static/css/main.e6c13ad2.css.map",
+    "main.8f520c69.js.map": "/conspect-pract/static/js/main.8f520c69.js.map",
+    "453.6f0c512e.chunk.js.map": "/conspect-pract/static/js/453.6f0c512e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.8f520c69.js"
+  ]
+}
